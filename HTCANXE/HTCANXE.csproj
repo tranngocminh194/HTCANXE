@@ -522,6 +522,7 @@
     <Content Include="Resources\Save.png" />
     <Content Include="Resources\search.png" />
     <Content Include="Resources\wooden-box.png" />
+    <Content Include="zxing.dll" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
