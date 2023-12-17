@@ -1,0 +1,424 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="db_HTCANXE" Class="DataCanXeDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=113.161.208.240,7878;Initial Catalog=db_HTCANXE;Persist Security Info=True;User ID=sa" SettingsObjectName="HTCANXE.Properties.Settings" SettingsPropertyName="db_HTCANXEConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CONGTRINH" Member="CONGTRINHs">
+    <Type Name="CONGTRINH">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="KhachHang" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TinhThanh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsDelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="DeleteDate" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[GROUP]" Member="GROUPs">
+    <Type Name="GROUP">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GROUPMENU" Member="GROUPMENUs">
+    <Type Name="GROUPMENU">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MenuID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GROUPUSER" Member="GROUPUSERs">
+    <Type Name="GROUPUSER">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GroupId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HANGHOA" Member="HANGHOAs">
+    <Type Name="HANGHOA">
+      <Column Name="Ma" Type="System.String" DbType="NVarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SoLo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Nhom" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="IsDelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DeleteDate" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="NhomCan" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KHACHHANG" Member="KHACHHANGs">
+    <Type Name="KHACHHANG">
+      <Column Name="Ma" Type="System.String" DbType="NVarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Nhom" Type="System.String" DbType="NVarChar(9)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MST" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NguoiLH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SDT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsDelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="DeleteDate" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOAICAN" Member="LOAICANs">
+    <Type Name="LOAICAN">
+      <Column Name="Ma" Type="System.String" DbType="NVarChar(12) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="IsDelete" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DeleteDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MENUFORM" Member="MENUFORMs">
+    <Type Name="MENUFORM">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Nut" Type="System.String" DbType="VarChar(120)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NOIXUAT" Member="NOIXUATs">
+    <Type Name="NOIXUAT">
+      <Column Name="Ma" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NHAPPHIEU" Member="NHAPPHIEUs">
+    <Type Name="NHAPPHIEU">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ma" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="IdCreate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="IdDelete" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DeleteDate" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="IdEdit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EditDate" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DateNT" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="isDelete" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="NgayNhap" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NHOMHANGHOA" Member="NHOMHANGHOAs">
+    <Type Name="NHOMHANGHOA">
+      <Column Name="Ma" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PHUONGTIEN" Member="PHUONGTIENs">
+    <Type Name="PHUONGTIEN">
+      <Column Name="Ma" Type="System.String" DbType="NVarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Nhom" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Chu" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SoCMT" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SDT" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TaiTrong" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TrongLuong" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="IsDelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DeleteDate" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="SoNiem" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TINHTHANH" Member="TINHTHANHs">
+    <Type Name="TINHTHANH">
+      <Column Name="Ma" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRAMCAN" Member="TRAMCANs">
+    <Type Name="TRAMCAN">
+      <Column Name="Ma" Type="System.String" DbType="NVarChar(12) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="IsDelete" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DeleteDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.USERS" Member="USERs">
+    <Type Name="USER">
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastLoginDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsDelete" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MaTramCan" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CANXE" Member="CANXEs">
+    <Type Name="CANXE">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SoPhieu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SoXe" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="KLXe" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SoRomooc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="KLRomooc" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LoaiHang" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="CongTy" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="SoLo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SoNiem" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="KLVao" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="ThoiGianVao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="idCanVao" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="KLRa" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="ThoiGianRa" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="idCanRa" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IdDelete" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TimeDelete" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IdEdit" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TimeEdit" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="isDelete" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="KLHang" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="MACAN" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="NoiXuat" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="TramCan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CongTrinh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdNhapHT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TimeNhapHT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MaBarCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IdNhap" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateServer" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="IsUpdateServer" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.Fn_GetListCanXeWhere" Method="Fn_GetListCanXeWhere">
+    <Parameter Name="loaican" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="sophieu" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="SDate" Parameter="sDate" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="TDate" Parameter="tDate" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="congty" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="congtrinh" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nhomhang" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="loaihang" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="soxe" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="soromooc" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="noixuat" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="tramcan" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="Fn_GetListCanXeWhereResult">
+      <Column Name="STT" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoPhieu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SoXe" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SoRomooc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SoLo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SoNiem" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="KLVao" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="KLRa" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="KLHang" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="ThoiGianVao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ThoiGianRa" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LoaiHang" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CongTy" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="CongTrinh" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TramCan" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NoiXuat" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="PhuongTien" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Fn_GetListCanXeWhereNhapHT" Method="Fn_GetListCanXeWhereNhapHT">
+    <Parameter Name="idnhapht" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Fn_GetListCanXeWhereNhapHTResult">
+      <Column Name="STT" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoPhieu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SoXe" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SoRomooc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SoLo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SoNiem" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="KLVao" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="KLRa" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="KLHang" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="ThoiGianVao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ThoiGianRa" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MaBarCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LoaiHang" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CongTy" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="CongTrinh" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TramCan" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NoiXuat" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="PhuongTien" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Fn_GetListCanXeWhereNhapHTSum" Method="Fn_GetListCanXeWhereNhapHTSum">
+    <Parameter Name="idnhapht" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Fn_GetListCanXeWhereNhapHTSumResult">
+      <Column Name="KLV" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="KLR" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="KLH" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Fn_GetListCanXeWhereSum" Method="Fn_GetListCanXeWhereSum">
+    <Parameter Name="loaican" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="sophieu" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="SDate" Parameter="sDate" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="TDate" Parameter="tDate" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="congty" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="congtrinh" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nhomhang" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="loaihang" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="soxe" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="soromooc" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="noixuat" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="tramcan" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="Fn_GetListCanXeWhereSumResult">
+      <Column Name="KLV" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="KLR" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="KLH" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SLN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SLNR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Fn_GetQuyenMenu" Method="Fn_GetQuyenMenu">
+    <Parameter Name="userid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Fn_GetQuyenMenuResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Nut" Type="System.String" DbType="VarChar(120)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Fn_GetRomooc" Method="Fn_GetRomooc">
+    <Parameter Name="phuongtien" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="Fn_GetRomoocResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ThoiGianVao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="KLXe" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SoRomooc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="KLRomooc" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Fn_GetSoPhieuCanXe" Method="Fn_GetSoPhieuCanXe">
+    <Parameter Name="tramcan" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="Fn_GetSoPhieuCanXeResult">
+      <Column Name="SoPhieu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Fn_SetUpdateDatabaseServer" Method="Fn_SetUpdateDatabaseServer">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="macode" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="Fn_SetUpdateDatabaseServerResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoPhieu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SoXe" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="KLXe" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SoRomooc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="KLRomooc" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LoaiHang" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="CongTy" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="SoLo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SoNiem" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="KLVao" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="ThoiGianVao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="idCanVao" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="KLRa" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="ThoiGianRa" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="idCanRa" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IdDelete" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TimeDelete" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IdEdit" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TimeEdit" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="isDelete" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="KLHang" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="MACAN" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="NoiXuat" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="TramCan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CongTrinh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdNhapHT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TimeNhapHT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MaBarCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IdNhap" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateServer" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="IsUpdateServer" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Fn_GetListCanXeWhereSumSoNiem" Method="Fn_GetListCanXeWhereSumSoNiem">
+    <Parameter Name="loaican" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="sophieu" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="SDate" Parameter="sDate" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="TDate" Parameter="tDate" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="congty" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="congtrinh" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nhomhang" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="loaihang" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="soxe" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="soromooc" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="noixuat" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="tramcan" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="Fn_GetListCanXeWhereSumSoNiemResult">
+      <Column Name="KLV" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="KLR" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="KLH" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SLN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SLNR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Fn_FindPhuongTien" Method="Fn_FindPhuongTien">
+    <Parameter Name="valuefind" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="Fn_FindPhuongTienResult">
+      <Column Name="Ma" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Nhom" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Chu" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SoCMT" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SDT" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TaiTrong" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TrongLuong" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="IsDelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DeleteDate" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="SoNiem" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Fn_GetPhieuCanXe" Method="Fn_GetPhieuCanXe">
+    <Parameter Name="loaican" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="tramcan" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="khoiluongvao" Type="System.Int32" DbType="Int" />
+    <Parameter Name="khoiluongra" Type="System.Int32" DbType="Int" />
+    <Parameter Name="isdelete" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idphieu" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Fn_GetPhieuCanXeResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CongTrinh" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CongTy" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="idCanRa" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="idCanVao" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IdDelete" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IdEdit" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="isDelete" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="KLHang" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="KLRa" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="KLRomooc" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="KLVao" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="KLXe" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LoaiHang" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SoLo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SoNiem" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SoPhieu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SoRomooc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SoXe" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ThoiGianRa" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ThoiGianVao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TimeDelete" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TimeEdit" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NoiXuat" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="MaBarCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MaCongTrinh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaCongTy" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="MaHang" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="MaTramCan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TramCan" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="IdNhapHT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>
